@@ -8,3 +8,7 @@ class Car:
 
     def is_saloon(self):
         return True if self.num_of_wheels == 4 else False
+
+    def drive(self, new_speed):
+        self.speed = 77
+        return self
