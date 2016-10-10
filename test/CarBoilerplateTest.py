@@ -17,6 +17,11 @@ class CarClassTest(unittest.TestCase):
         self.assertEqual('General', gm.name,
                          msg='The car should be called `General` if no name was passed as an argument')
 
+    def test_default_car_model(self):
+        gm = Car()
+        self.assertEqual('GM', gm.model,
+                         msg="The car's model should be called `GM` if no model was passed as an argument")
+
 
 if __name__ == '__main__':
     unittest.main()
