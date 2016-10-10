@@ -66,5 +66,15 @@ class CarClassTest(unittest.TestCase):
                              [0, 1000],
                              msg='The Mercedes should have speed 0 km/h until you put `the pedal to the metal`')
 
+    def test_drive_car(self):
+        man = Car('MAN', 'Truck', 'trailer')
+        moving_man = man.drive(7)
+        moving_man_instance = isinstance(moving_man, Car)
+        moving_man_type = type(moving_man) is Car
+        self.assertListEqual([True, True, man.speed],
+                             [moving_man_instance, moving_man_type, moving_man.speed],
+                             msg='The car drive function should return the instance of the Car class')
+
+
 if __name__ == '__main__':
     unittest.main()
