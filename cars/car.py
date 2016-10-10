@@ -10,5 +10,5 @@ class Car:
         return True if self.num_of_wheels == 4 else False
 
     def drive(self, new_speed):
-        self.speed = 77
+        self.speed = 1000 if self.is_saloon() else 77
         return self
