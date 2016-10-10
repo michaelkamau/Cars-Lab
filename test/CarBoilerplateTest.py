@@ -43,6 +43,11 @@ class CarClassTest(unittest.TestCase):
         self.assertEqual([8, 4], [man.num_of_wheels, koenigsegg.num_of_wheels],
                          msg='The car shoud have four (4) wheels except its a type of trailer')
 
+    def test_car_type(self):
+        koenigsegg = Car('Koenigsegg', 'Agera R')
+        self.assertTrue(koenigsegg.is_saloon(),
+                        msg='The car type should be saloon if it is not a trailer')
+
 
 if __name__ == '__main__':
     unittest.main()
