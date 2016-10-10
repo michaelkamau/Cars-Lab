@@ -22,6 +22,12 @@ class CarClassTest(unittest.TestCase):
         self.assertEqual('GM', gm.model,
                          msg="The car's model should be called `GM` if no model was passed as an argument")
 
+    def test_car_properties(self):
+        toyota = Car('Toyota', 'Corolla')
+        self.assertListEqual(['Toyota', 'Corolla'],
+                             [toyota.name, toyota.model],
+                             msg='The car name and model should be a property of the car')
+
 
 if __name__ == '__main__':
     unittest.main()
