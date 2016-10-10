@@ -48,6 +48,15 @@ class CarClassTest(unittest.TestCase):
         self.assertTrue(koenigsegg.is_saloon(),
                         msg='The car type should be saloon if it is not a trailer')
 
+    def test_car_speed(self):
+        man = Car('MAN', 'Truck', 'trailer')
+        parked_speed = man.speed
+        moving_speed = man.drive(7).speed
+
+        self.assertListEqual([parked_speed, moving_speed],
+                             [0, 77],
+                             msg='The Trailer should have speed 0 km/h until you put `the pedal to the metal`')
+
 
 if __name__ == '__main__':
     unittest.main()
