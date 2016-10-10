@@ -28,6 +28,15 @@ class CarClassTest(unittest.TestCase):
                              [toyota.name, toyota.model],
                              msg='The car name and model should be a property of the car')
 
+    def test_car_doors(self):
+        opel = Car('Opel', 'Omega 3')
+        porshe = Car('Porshe', '911 Turbo')
+        self.assertListEqual([opel.num_of_doors,
+                              porshe.num_of_doors,
+                              Car('Koenigsegg', 'Agera R').num_of_doors],
+                             [4, 2, 2],
+                             msg='The car shoud have four (4) doors except its a Porshe or Koenigsegg')
+
 
 if __name__ == '__main__':
     unittest.main()
